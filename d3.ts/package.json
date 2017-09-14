@@ -1,0 +1,19 @@
+{
+  "name": "imdb",
+  "version": "1.0.0",
+  "description": "show imdb celebrities' relationship using d3.js",
+  "main": "index.js",
+  "dependencies": {
+    "d3": "^4.10.0"
+  },
+  "devDependencies": {
+    "@types/d3": "^4.10.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript2": "^0.5.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuhui Lin",
+  "license": "ISC"
+}
