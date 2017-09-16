@@ -32,6 +32,7 @@ interface GraphLink extends d3.SimulationLinkDatum<d3.SimulationNodeDatum> {
 }
 
 export class Draw {
+    json_path: string;
     svgId: string;
     weightFunc: (d: GraphLink) => number;
     degreeFunc: (d: GraphNode) => number;
@@ -51,8 +52,9 @@ export class Draw {
         .range([0.3, 1])
         .clamp(true);
 
-    constructor(svgId: string, type: string) {
+    constructor(svgId: string, type: string, json_path: string) {
         this.svgId = svgId;
+        this.json_path = json_path;
 
         if (type == 'all') {
             this.weightFunc = (d) => d.weight
@@ -89,9 +91,10 @@ export class Draw {
                 .strength(0.3))
 
         let that = this
-        let pathname = window.location.pathname;
+        // let pathname = window.location.pathname;
         // window.alert('path: ' + pathname);
-        d3.json<Graph>(pathname + "../output/graph_200.json", function (error, graph) {
+        d3.json<Graph>(this.json_path, function (error, graph) {
+        // d3.json<Graph>(pathname + "../output/graph_200.json", function (error, graph) {
             if (error) throw error;
 
             let link = svg.append("g")
@@ -218,8 +221,8 @@ export class Draw {
     }
 }
 
-export function draw(svgId: string, type: string): void {
-    let d = new Draw(svgId, type);
+export function draw(svgId: string, type: string, json_path: string): void {
+    let d = new Draw(svgId, type, json_path);
     d.render();
 }
 

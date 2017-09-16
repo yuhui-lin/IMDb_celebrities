@@ -7455,7 +7455,7 @@ function triangleArea(a, b, c) {
 }
 
 var Draw = (function () {
-    function Draw(svgId, type) {
+    function Draw(svgId, type, json_path) {
         var _this = this;
         this.color = ordinal(category20);
         this.rScale = linear$2()
@@ -7471,6 +7471,7 @@ var Draw = (function () {
             .range([0.3, 1])
             .clamp(true);
         this.svgId = svgId;
+        this.json_path = json_path;
         if (type == 'all') {
             this.weightFunc = function (d) { return d.weight; };
             this.degreeFunc = function (d) { return _this.rScale(d.degree_weight); };
@@ -7504,9 +7505,10 @@ var Draw = (function () {
             .force("collide", collide(this.degreeFunc)
             .strength(0.3));
         var that = this;
-        var pathname = window.location.pathname;
+        // let pathname = window.location.pathname;
         // window.alert('path: ' + pathname);
-        json(pathname + "../output/graph_200.json", function (error, graph) {
+        json(this.json_path, function (error, graph) {
+            // d3.json<Graph>(pathname + "../output/graph_200.json", function (error, graph) {
             if (error)
                 throw error;
             var link = svg.append("g")
@@ -7620,8 +7622,8 @@ var Draw = (function () {
     };
     return Draw;
 }());
-function draw(svgId, type) {
-    var d = new Draw(svgId, type);
+function draw(svgId, type, json_path) {
+    var d = new Draw(svgId, type, json_path);
     d.render();
 }
 // draw('movie');
