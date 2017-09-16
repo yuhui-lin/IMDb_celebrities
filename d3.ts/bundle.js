@@ -7504,7 +7504,9 @@ var Draw = (function () {
             .force("collide", collide(this.degreeFunc)
             .strength(0.3));
         var that = this;
-        json("../output/graph_200.json", function (error, graph) {
+        var pathname = window.location.pathname;
+        // window.alert('path: ' + pathname);
+        json(pathname + "../output/graph_200.json", function (error, graph) {
             if (error)
                 throw error;
             var link = svg.append("g")

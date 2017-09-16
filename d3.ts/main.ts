@@ -89,7 +89,9 @@ export class Draw {
                 .strength(0.3))
 
         let that = this
-        d3.json<Graph>("../output/graph_200.json", function (error, graph) {
+        let pathname = window.location.pathname;
+        // window.alert('path: ' + pathname);
+        d3.json<Graph>(pathname + "../output/graph_200.json", function (error, graph) {
             if (error) throw error;
 
             let link = svg.append("g")

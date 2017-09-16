@@ -1,0 +1,21 @@
+.links path {
+    stroke: #bbb;
+    stroke-opacity: 0.6;
+    fill: none;
+}
+
+.nodes circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+/* text {
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+text::selection {
+    background: none;
+} */

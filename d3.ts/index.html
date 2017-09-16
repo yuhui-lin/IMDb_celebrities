@@ -4,30 +4,7 @@
 <head>
   <meta charset="utf-8">
   <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
-  <style>
-    .links path {
-      stroke: #bbb;
-      stroke-opacity: 0.6;
-      fill: none;
-    }
-
-    .nodes circle {
-      stroke: #fff;
-      stroke-width: 1.5px;
-    }
-
-    /* text {
-      cursor: default;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    text::selection {
-      background: none;
-    } */
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -37,21 +14,13 @@
   <svg id='movie' width="1500" height="1000"></svg>
   <h1>tv</h1>
   <svg id='tv' width="1500" height="1000"></svg>
+
   <script src="bundle.js"></script>
   <script>
     bundle.draw('all', 'all');
     bundle.draw('movie', 'movie');
     bundle.draw('tv', 'tvEps');
   </script>
-  <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="main.js"></script> -->
-
-  <h1>Status</h1>
-  <div id="passchart"></div>
-  <svg width="960" height="600"></svg>
-
-  <h1>Compiler Performance</h1>
-  <div id="performanceChart"></div>
 </body>
 
 </html>
