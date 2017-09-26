@@ -2,7 +2,7 @@
 
 This notebook contains source code for analysing IMDb celebreties.
 
-check out [this article](https://yuhui-lin.github.io/) for analysis.
+check out [this article](http://localhost:4000/blog/2017/09/10/paparazzi.html) for analysis.
 
 ## overview
 

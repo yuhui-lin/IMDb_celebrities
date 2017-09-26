@@ -8,6 +8,15 @@
     stroke: #fff;
     stroke-width: 1.5px;
 }
+
+svg {
+    display: block;
+    margin: 0 auto; 
+    /* margin-left: -120px; */
+    /* width:1000px;
+    height:700px; */
+}
+
 /* text {
     cursor: default;
     -webkit-user-select: none;
